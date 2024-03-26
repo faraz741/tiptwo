@@ -1,0 +1,96 @@
+<app-sidebar></app-sidebar>
+
+<div id="right-panel" class="right-panel">
+    <!-- Header-->
+   <app-header></app-header>
+    <!-- /#header -->
+    <!-- Content -->
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+          <div class="ct_section_width">
+            <div class="d-flex align-items-center gap-3 justify-content-between mb-3">
+              <h4 class="ct_h4 mb-0">User Transaction Detail</h4>
+              <button  class="ct_short_btn ct_big_btn mt-0 mx-0">
+                  {{userData[0].name}}
+                </button>
+            </div>
+            <button class="ct_h4 mb-0 short_btn" routerLink="/users"> <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp; Go back</button>
+            <div>
+              <div
+                class="table-responsive ct_races_table ct_vanue_table p-0 ct_bg_none ct_transaction_table_div ct_table_200">
+                <table class="table">
+                  <thead>
+                    <!-- <tr>
+                      <th class="ct_light_blue_bg_sep "></th>
+                      <th colspan="2" class="ct_light_blue_bg_sep "><strong>ROSEHILL</strong></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+    
+                    </tr> -->
+                    <tr class="ct_sub_head_tble ct_sub_head_sky_blue">
+                      <th class="ct_dark_black_sep ">S.no</th>
+                      <th class="ct_dark_black_sep ">Betting Date</th>
+                      <th class="ct_dark_black_sep ">Total Investment</th>
+                      <th class="ct_dark_black_sep ">Profit/Loss</th>
+                      <th class="ct_dark_black_sep ">Payment Status</th>
+                      <th class="ct_dark_black_sep ">Commission Paid</th>
+             
+                   
+                    
+                      <!-- <th class="ct_dark_black_sep"
+                        style="border-left: 0px solid #dee2e6;border-right: 1px solid #dee2e6; border-radius: 0px 10px 10px 0px">
+                        Action</th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let items of bettingData;index as i">
+                      <td class=" ">{{i +1}}</td>
+                      <td class=" ">{{items.betting_date}}</td>
+                      <td class=" ">$ {{items.total_investment}}</td>
+                      <td class=" ">$ {{items.profit_loss}}</td>
+                      <td *ngIf='items.profit_loss > 0;else second' class=" ">{{items.payment_status == 1 ? 'Done' : 'Pending'}}</td>
+                      <ng-template #second>
+                        <td  class=" ">Loss</td>
+                      </ng-template>
+                      <td  class=" ">{{items.payment_amount}}</td>
+              
+                      <!-- <td>
+                        <div class="d-flex align-items-center gap-2 ">
+                          <a [routerLink]="['/addTips']" class="ct_short_btn ct_big_btn mt-0 mx-0">Betting Details</a>
+                        </div>
+                      </td> -->
+                
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- <button class="ct_short_btn mx-auto">
+                        Save 
+                      </button> -->
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <!-- view explanation modal S -->
+
+
+
+    <footer class="ct_dash_footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">Copyright &copy; 2023 TipTwo Admin</div>
+        </div>
+      </div>
+    </footer>
+  </div>

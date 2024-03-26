@@ -1,0 +1,81 @@
+<app-sidebar></app-sidebar>
+
+<div id="right-panel" class="right-panel">
+    <!-- Header-->
+    <app-header></app-header>
+    <!-- /#header -->
+    <!-- Content -->
+    <div class="content">
+      <!-- Animated -->
+      <div class="animated fadeIn">
+          <div class="ct_section_width">
+            
+              
+              <div class="row">
+                <div class="col-lg-12 mb-4">
+                  <div class="mb-3 d-flex justify-content-between align-items-center flex-wrap">
+                      <h4 class="ct_h4 mb-0">Tips</h4>
+                  </div>
+                  <div class="table-responsive ct_races_table ct_vanue_table p-0 ct_bg_none ct_transaction_table_div ct_table_200">
+                    <table class="table ct_sky_bg1">
+                     <thead>
+                        <tr>
+                          <th>S.No</th>
+                          <th>Race Date </th>
+                          <th>Race Time </th>
+                          <th>Race Venue  </th>
+                          <th>Race Number</th>
+                          <th>Horse name</th>
+                          <th>Odds</th>
+                          <th>TipTwo Rating</th>
+                          <th>TipTwo Probability</th>
+                          <th>Current Price R&R</th>
+                          <!-- <th>Action</th> -->
+                        </tr>
+                      
+                     </thead>
+                     <tbody>
+                      <tr *ngFor="let items of tipsData; index as i">
+                        <td>{{i +1}}</td>
+                        <td>{{items.race_date}}</td>
+                        <td>{{items.race_time}}</td>
+                        <td>{{items.race_venue}}</td>
+                        <td>{{items.race_number}}</td>
+                        <td>{{items.horse_name}}</td>
+                        <td>{{items.odds}}</td>
+                        <td>{{items.tipTwoRating}}</td>
+                        <td>{{items.tipTwoProbability}} </td>
+                        <td>{{items.currentPriceRandR}}</td>
+                        <!-- <td>
+                          <div class="d-flex align-items-center gap-2 ">
+                              <a href="edit_tips.html" class="ct_edit_btn"><i class="fa-solid fa-pen"></i></a>
+                            </div>
+                        </td> -->
+                      </tr>
+                    
+                     
+                     
+                   
+                     
+                    
+              
+                  
+                   
+            
+                      
+                      
+                     </tbody>
+                   
+                    </table>
+                   </div>
+                  
+                </div>
+             
+
+              
+              </div>
+            </div>
+      
+        </div>
+      </div>
+      </div>

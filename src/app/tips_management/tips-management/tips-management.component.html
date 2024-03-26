@@ -1,0 +1,163 @@
+<app-sidebar></app-sidebar>
+
+<div id="right-panel" class="right-panel">
+  <!-- Header-->
+  <app-header></app-header>
+  <!-- /#header -->
+  <!-- Content -->
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <div class="ct_section_width">
+          <div class="d-flex align-items-center gap-3 justify-content-between mb-3">
+            <h4 class="ct_h4 mb-0">Tips Management</h4>
+            <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="ct_short_btn ct_big_btn mt-0 mx-0">
+              Create tips
+            </button>
+          </div>
+          <div>
+            <div
+              class="table-responsive ct_races_table ct_vanue_table p-0 ct_bg_none ct_transaction_table_div ct_table_200">
+              <table class="table">
+                <thead>
+                  <!-- <tr>
+                      <th class="ct_light_blue_bg_sep "></th>
+                      <th colspan="2" class="ct_light_blue_bg_sep "><strong>ROSEHILL</strong></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+    
+                    </tr> -->
+                  <tr class="ct_sub_head_tble ct_sub_head_sky_blue">
+                    <th class="ct_dark_black_sep ">S.no</th>
+                    <th class="ct_dark_black_sep ">Date</th>
+                    <th class="ct_dark_black_sep ">Heading</th>
+                    <th class="ct_dark_black_sep ">Description </th>
+
+                    <th class="ct_dark_black_sep"
+                      style="border-left: 0px solid #dee2e6;border-right: 1px solid #dee2e6; border-radius: 0px 10px 10px 0px">
+                      Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let items of homeData; index as i ">
+                    <td class="">{{i +1}}</td>
+                    <td class=" ">{{items.date}}</td>
+                    <td class=" ">{{items.heading}}</td>
+                    <td class=" ">{{items.description}}</td>
+                    <td>
+                      <div class="d-flex align-items-center gap-2 ">
+                        <button class="ct_short_btn ct_big_btn mt-0 mx-0" data-bs-toggle="modal" data-bs-target="#updatestaticBackdrop" (click)="openUpdateModal(items.id)"><i class="fa-solid fa-edit me-1"></i></button>
+                        <a class="ct_short_btn ct_big_btn mt-0 mx-0" (click)="onDelete(items.id)"><i class="fa-solid fa-trash me-1" ></i></a>
+                      </div>
+                    </td>
+                    <!-- <td class="ct_dark_black_sep text-white">0.00%</td>/ -->
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+            <!-- <button class="ct_short_btn mx-auto">
+                        Save 
+                      </button> -->
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <!-- view explanation modal S -->
+
+
+
+  <footer class="ct_dash_footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">Copyright &copy; 2023 TipTwo Admin</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!--upDate Modal -->
+
+<div class="modal fade" id="updatestaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="ct_tble_close" data-bs-dismiss="modal" aria-label="Close" ><i class="fa-solid fa-xmark" #closeModal></i></button>
+      </div>
+      <form [formGroup]="tipsForm" (ngSubmit)="onUpdate(tipsForm)" class="ct_edit_tble_form">
+        <div class="modal-body">
+          <h4 class="text-center mb-4" id="staticBackdropLabel"><strong>Update Tips Management</strong></h4>
+          <div class="form-group" hidden>
+            <label for="Name">id</label>
+            <input type="text" placeholder="Enter date" class="form-control" formControlName="id">
+          </div>
+          <div class="form-group">
+            <label for="Name">Date</label>
+            <input type="date" placeholder="Enter date" class="form-control" formControlName="date">
+          </div>
+          <div class="form-group">
+            <label for="Name">Heading</label>
+            <input type="text" class="form-control" placeholder="Enter heading" class="form-control"
+              formControlName="heading">
+          </div>
+          <div class="form-group">
+            <label for="Name">Description</label>
+            <textarea name="" class="form-control" id="" cols="40" rows="3" formControlName="description"></textarea>
+          </div>
+  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closeModal (click)="resetForm()">Close</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--ADD Modal -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="ct_tble_close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form [formGroup]="tipsForm" (ngSubmit)="onAdd(tipsForm)" class="ct_edit_tble_form">
+      <div class="modal-body">
+        <h4 class="text-center mb-4"><strong>Create Tips Management</strong></h4>
+          <div class="form-group">
+            <label for="Name">Date</label>
+            <input type="date" placeholder="Enter date" class="form-control" formControlName="date">
+          </div>
+          <div class="form-group">
+            <label for="Name">Heading</label>
+            <input type="text" class="form-control" placeholder="Enter heading" class="form-control"
+              formControlName="heading">
+          </div>
+          <div class="form-group">
+            <label for="Name">Description</label>
+            <textarea class="form-control" name="" id="" cols="40" rows="3" formControlName="description"></textarea>
+          </div>
+  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closeModal2>Close</button>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

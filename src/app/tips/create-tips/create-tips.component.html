@@ -1,0 +1,180 @@
+<app-sidebar></app-sidebar>
+
+<!-- Right Panel -->
+<div id="right-panel" class="right-panel">
+  <!-- Header-->
+  <app-header></app-header>
+  <!-- /#header -->
+  <!-- Content -->
+  <div class="content">
+    <div class="row justify-content-center align-items-center pt-5">
+      <div class="col-md-8">
+        <div class="ct_set_bank_bg_form">
+
+          <h4>Create Tips</h4>
+          <div class="mt-5">
+            <form [formGroup]="form" (ngSubmit)="onAdd()">
+              <div formArrayName="tips">
+              <div class="row">
+               
+                  <div class="col-md-6 mb-4">
+                    <div class="form-group">
+                      <h4 class="ct_font_24 mb-4">Tip One</h4>
+                      <!-- <input type="text" placeholder="Horse Name" class="form-control"> -->
+                    </div>
+                    <div [formGroupName]="0">
+
+                      <div class="form-group">
+                        <label for="">Horse One</label>
+                        <input type="text" placeholder="Horse Name" class="form-control" formControlName="horse_name">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Horse Number</label>
+                        <input type="text" placeholder="Enter horse no." class="form-control" formControlName="horse_number">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Odds</label>
+                        <input type="number" placeholder="odds" class="form-control" formControlName="odds">
+                      </div>
+                      <div class="form-group">
+                        <label for="">TIPTWO RATING</label>
+                        <input type="text" placeholder="TipTwo Rating" class="form-control"
+                          formControlName="tipTwoRating">
+                      </div>
+                      <div class="form-group">
+                        <label for="">TIPTWO PROBABILITY</label>
+                        <input type="text" placeholder="TipTwo Probability" class="form-control"
+                          formControlName="tipTwoProbability">
+                      </div>
+                      <div class="form-group">
+                        <label for="">CURRENT PRICE R&R</label>
+                        <input type="text" placeholder="Current Price R&R" class="form-control"
+                          formControlName="currentPriceRandR">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 mb-4">
+                    <div class="form-group">
+                      <h4 class="ct_font_24 mb-4">Tip Two</h4>
+                      <!-- <input type="text" placeholder="Horse Name" class="form-control"> -->
+                    </div>
+
+                    <div [formGroupName]="1">
+                      <div class="form-group">
+                        <label for="">Horse Two</label>
+                        <input type="text" placeholder="Horse Name" class="form-control" formControlName="horse_name">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Horse Number</label>
+                        <input type="text" placeholder="Enter horse no." class="form-control" formControlName="horse_number">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Odds</label>
+                        <input type="number" placeholder="Enter odds" class="form-control" formControlName="odds">
+                      </div>
+                      <div class="form-group">
+                        <label for="">TIPTWO RATING</label>
+                        <input type="text" placeholder="TipTwo Rating" class="form-control"
+                          formControlName="tipTwoRating">
+                      </div>
+                      <div class="form-group">
+                        <label for="">TIPTWO PROBABILITY</label>
+                        <input type="text" placeholder="TipTwo Probability" class="form-control"
+                          formControlName="tipTwoProbability">
+                      </div>
+                      <div class="form-group">
+                        <label for="">CURRENT PRICE R&R</label>
+                        <input type="text" placeholder="Current Price R&R" class="form-control"
+                          formControlName="currentPriceRandR">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ct_two_btn_btm">
+                <button type="submit" class="ct_short_btn my-0  px-4 py-2 text-center" style="width: 180px;">
+                  Save</button>
+                <button type="button" class="ct_short_btn my-0  border_red_btn"
+                  routerLink="/todays_race">Cancel</button>
+              </div>
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer class="ct_dash_footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">Copyright &copy; 2023 TipTwo Admin</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- <table class="table  ct_sky_bg1">
+                      <thead>
+                        <tr>
+                          <th>S.No</th>
+                          <th>RACE VENUE</th>
+                          <th>RACE TIME</th>
+                          <th>RACE NUMBER</th>
+                          <th>Horse Name</th>
+                          <th>TIPTWO RATING</th>
+                          <th>TIPTWO PROBABILITY</th>
+                          <th>CURRENT PRICE R&R</th>
+                        </tr>
+                      </thead>
+                      <tbody formArrayName="tips">
+      
+                        <tr [formGroupName]="0">
+                          <td class="text-center">Tip 1</td>
+                          <td class="text-center">
+                            {{raceData[0].race_venue}}
+                          </td>
+                          <td class="text-center">
+                            {{raceData[0].race_time}}
+                          </td>
+                          <td class="text-center">
+                            {{raceData[0].race_number}}
+                          </td>
+                          <td>
+                            <input type="text" class="form-control" placeholder="horse name" formControlName="horse_name">
+                          </td>
+                          <td>
+                            <input type="text" class="form-control" formControlName="tipTwoRating">
+                          </td>
+                          <td>
+                            <input type="text" class="form-control" formControlName="tipTwoProbability">
+                          </td>
+                          <td>
+                            <input type="text" class="form-control" formControlName="currentPriceRandR">
+                          </td>
+      
+                        </tr>
+      
+                        <tr [formGroupName]="1">
+                          <td class="text-center">Tip 2</td>
+                          <td class="text-center">{{raceData[0].race_venue}}</td>
+                          <td class="text-center"> {{raceData[0].race_time}}</td>
+                          <td class="text-center"> {{raceData[0].race_number}}</td>
+                          <td>
+                            <input type="text" class="form-control" placeholder="horse name" formControlName="horse_name">
+      
+                          </td>
+                          <td>
+                            <input type="text" class="form-control" formControlName="tipTwoRating">
+                          </td>
+                          <td>
+                            <input type="text" class="form-control" formControlName="tipTwoProbability">
+                          </td>
+                          <td>
+                            <input type="text" class="form-control" formControlName="currentPriceRandR">
+                          </td>
+      
+                        </tr>
+                      </tbody>
+      
+                    </table> -->

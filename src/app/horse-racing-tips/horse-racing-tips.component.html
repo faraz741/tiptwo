@@ -1,0 +1,121 @@
+<app-sidebar></app-sidebar>
+
+<!-- Right Panel -->
+<div id="right-panel" class="right-panel">
+    <!-- Header-->
+    <app-header></app-header>
+    <!-- /#header -->
+    <!-- Content -->
+    <div class="content">
+        <div class="row justify-content-center align-items-center pt-5">
+            <div class="col-md-8">
+                <div class="ct_set_bank_bg_form">
+                    <form [formGroup]="tipForm" (ngSubmit)="onUpdate(tipForm)">
+                        <h4>Dashboard Horse Racing Tips</h4>
+                     
+
+
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Name">Heading 1</label>
+                                    <input type="text" placeholder="Enter heading 1" class="form-control"
+                                        formControlName="heading1">
+                                    <!-- <span class="text-danger"
+                                    *ngIf="createRace.get('city')?.invalid && createRace.get('city')?.touched">
+                                    <div *ngIf="createRace.get('city')?.errors?.['required']">
+                                      Please enter race city
+                                    </div>
+                                  </span> -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="Name">Description 1</label>
+                                    <textarea cols="30" rows="3" type="text" placeholder="Enter description 1" class="form-control"
+                                        formControlName="description1"></textarea>
+                                    <!-- <span class="text-danger"
+                                    *ngIf="createRace.get('city')?.invalid && createRace.get('city')?.touched">
+                                    <div *ngIf="createRace.get('city')?.errors?.['required']">
+                                      Please enter race city
+                                    </div>
+                                  </span> -->
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Name">Heading 2</label>
+                                    <input type="text" placeholder="Enter heading 2" class="form-control"
+                                        formControlName="heading2">
+                                    <!-- <span class="text-danger"
+                                    *ngIf="createRace.get('city')?.invalid && createRace.get('city')?.touched">
+                                    <div *ngIf="createRace.get('city')?.errors?.['required']">
+                                      Please enter race city
+                                    </div>
+                                  </span> -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="Name">Description 2</label>
+                                    <textarea cols="30" rows="3" type="text" placeholder="Enter description 2" class="form-control"
+                                        formControlName="description2"></textarea>
+                                    <!-- <span class="text-danger"
+                                    *ngIf="createRace.get('city')?.invalid && createRace.get('city')?.touched">
+                                    <div *ngIf="createRace.get('city')?.errors?.['required']">
+                                      Please enter race city
+                                    </div>
+                                  </span> -->
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Name">Heading 3</label>
+                                    <input type="text" placeholder="Enter heading 3" class="form-control"
+                                        formControlName="heading3">
+                                    <!-- <span class="text-danger"
+                                    *ngIf="createRace.get('city')?.invalid && createRace.get('city')?.touched">
+                                    <div *ngIf="createRace.get('city')?.errors?.['required']">
+                                      Please enter race city
+                                    </div>
+                                  </span> -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="Name">Description 3</label>
+                                    <textarea cols="30" rows="3" type="text" placeholder="Enter description 3" class="form-control"
+                                        formControlName="description3"></textarea>
+                                    <!-- <span class="text-danger"
+                                    *ngIf="createRace.get('city')?.invalid && createRace.get('city')?.touched">
+                                    <div *ngIf="createRace.get('city')?.errors?.['required']">
+                                      Please enter race city
+                                    </div>
+                                  </span> -->
+                                </div>
+                            </div>
+                          
+                           
+                     
+                               
+                            
+                            <div class="ct_two_btn_btm">
+                                <button type="submit" class="ct_short_btn my-0  px-4 py-2 text-center"
+                                    style="width: 180px;"> Update</button>
+                                <button type="button" class="ct_short_btn my-0  border_red_btn"
+                                    routerLink="/todays_race">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <footer class="ct_dash_footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">Copyright &copy; 2023 TipTwo Admin</div>
+            </div>
+        </div>
+    </footer>
+</div>

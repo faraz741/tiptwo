@@ -1,0 +1,167 @@
+<app-sidebar></app-sidebar>
+
+<div id="right-panel" class="right-panel">
+  <!-- Header-->
+  <app-header></app-header>
+  <!-- /#header -->
+  <!-- Content -->
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <div class="ct_section_width">
+          <div class="d-flex align-items-center gap-3 justify-content-between mb-3">
+            <h4 class="ct_h4 mb-0">Venue Management</h4>
+            <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="ct_short_btn ct_big_btn mt-0 mx-0">
+              Create venue
+            </button>
+          </div>
+          <div>
+            <div
+              class="table-responsive ct_races_table ct_vanue_table p-0 ct_bg_none ct_transaction_table_div ct_table_200">
+              <table class="table">
+                <thead>
+               
+                  <tr class="ct_sub_head_tble ct_sub_head_sky_blue">
+                    <th class="ct_dark_black_sep ">S.no</th>
+                    <th class="ct_dark_black_sep ">Location</th>
+                    <th class="ct_dark_black_sep ">Venue</th>
+                    <th class="ct_dark_black_sep ">Image </th>
+
+                    <th class="ct_dark_black_sep"
+                      style="border-left: 0px solid #dee2e6;border-right: 1px solid #dee2e6; border-radius: 0px 10px 10px 0px">
+                      Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let items of homeData; index as i">
+                    <td class="fs-3">{{i +1}}</td>
+                    <td class="fs-3">{{items.location}}</td>
+                    <td class="fs-3">{{items.venue}}</td>
+                    <td class="fs-3"><img
+                        src="{{imageURl}}/{{items.image}}"
+                        alt=""></td>
+                    <td>
+                      <div class="d-flex align-items-center gap-2 ">
+                        <button class="ct_short_btn ct_big_btn mt-0 mx-0" data-bs-toggle="modal"
+                          data-bs-target="#updatestaticBackdrop" (click)="openUpdateModal(items.id)"><i
+                            class="fa-solid fa-edit me-1"></i></button>
+                        <a class="ct_short_btn ct_big_btn mt-0 mx-0"(click)="onDelete(items.id)"><i class="fa-solid fa-trash me-1"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- view explanation modal S -->
+
+
+
+  <footer class="ct_dash_footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">Copyright &copy; 2023 TipTwo Admin</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!--upDate Modal -->
+
+<div class="modal fade" id="updatestaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true" (hidden)="resetForm()">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="ct_tble_close" data-bs-dismiss="modal" aria-label="Close"><i
+            class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form [formGroup]="venueForm" (ngSubmit)="onUpdate(venueForm)" class="ct_edit_tble_form">
+        <div class="modal-body">
+          <h4 class="text-center mb-4" id="staticBackdropLabel"><strong>Update Venue Management</strong></h4>
+          <div class="form-group" hidden>
+            <label for="Name">id</label>
+            <input type="text" placeholder="Enter location" class="form-control" formControlName="id">
+          </div>
+          <div class="form-group">
+            <label for="Name">Location</label>
+            <input type="text" placeholder="Enter location" class="form-control" formControlName="location">
+          </div>
+          <div class="form-group">
+            <label for="Name">Venue</label>
+            <input type="text" placeholder="Enter venue" class="form-control" formControlName="venue">
+          </div>
+          <div class="form-group">
+            <label for="Name">Description</label>
+            <input type="text" class="form-control" placeholder="Enter description" class="form-control"
+              formControlName="description">
+          </div>
+          <div class="form-group">
+            <label for="Name">Image</label>
+            <input type="file" (change)="PreviewImage('update')" id="exampleInputFile2" placeholder="Enter Venue Name" class="form-control" accept="image/png, image/svg+xml, image/gif, image/jpeg"
+        >
+              <img class="w-50" src="{{imageURl}}/{{imagedata}}" alt="" id="uploadPreview2">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closeModal (click)="resetForm()">Close</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--add Modal -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true" (hidden)="resetForm()">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="ct_tble_close" data-bs-dismiss="modal" aria-label="Close"><i
+            class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form [formGroup]="venueForm" (ngSubmit)="onAdd(venueForm)" class="ct_edit_tble_form">
+        <div class="modal-body">
+          <h4 class="text-center mb-4" id="staticBackdropLabel"><strong>Create Venue Management</strong></h4>
+          <div class="form-group" hidden>
+            <label for="Name">id</label>
+            <input type="text" placeholder="Enter " class="form-control" formControlName="id">
+          </div>
+          <div class="form-group">
+            <label for="Name">Location</label>
+            <input type="text" placeholder="Enter location" class="form-control" formControlName="location">
+          </div>
+          <div class="form-group">
+            <label for="Name">Venue</label>
+            <input type="text" placeholder="Enter venue" class="form-control" formControlName="venue">
+          </div>
+          <div class="form-group">
+            <label for="Name">Description</label>
+            <input type="text" class="form-control" placeholder="Enter description" class="form-control"
+              formControlName="description">
+          </div>
+          <div class="form-group">
+            <label for="Name">Image</label>
+            <input type="file" (change)="PreviewImage('add')" placeholder="Enter Venue Name" class="form-control" accept="image/png, image/svg+xml, image/gif, image/jpeg"
+              id="exampleInputFile">
+              <img class="w-50" src="{{imageURl}}/{{imagedata}}" alt="" id="uploadPreview">
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closeModal2>Close</button>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,145 @@
+<!-- Left Panel -->
+<aside id="left-panel" class="left-panel">
+  <nav class="navbar navbar-expand-sm navbar-default">
+    <div id="main-menu" class="main-menu collapse navbar-collapse">
+      <ul class="nav navbar-nav mt-3">
+        <li>
+          <a routerLinkActive="active" class="d-flex align-items-baseline"><i
+              class="menu-icon fa fa-home"></i>Dashboard</a>
+        </li>
+        <li routerLinkActive="active" class="menu-item-has-children dropdown" id="ct_droppshow_tips1">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/images/lamp.png" alt="">Tips Management
+          </a>
+          <ul class="sub-menu children dropdown-menu" id="ct_droppshow_tips2">
+            <li routerLinkActive="show active" (click)="onClassAddShowTips()">
+              <a routerLink="/todaysTips"  (click)="onClassAddShowTips()">Today's Tips</a>
+            </li>
+            <li routerLinkActive="show active">
+              <a routerLink="/allTips">All Tips</a>
+            </li>
+          </ul>
+        </li>
+
+
+        <li routerLinkActive="active" class="menu-item-has-children dropdown">
+          <a routerLink="/todays_race" routerLinkActive="active" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="menu-icon fa fa-horse"></i>Races Management
+          </a>
+        </li>
+        <li routerLinkActive="active" class="menu-item-has-children dropdown" routerLinkActive="show">
+          <a routerLink="/users" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="menu-icon fas fa-user"></i>Users Management
+          </a>
+        </li>
+
+       <div class="w-100 ">
+        <ul class="ct_dropdown_ul">
+          <li class="ct_droppshow_main menu-item-has-children dropdown " id="ct_droppshow_main12" (click)="onClassAddShow()">
+            <a href="javascript:void(0)" class="dropdown-toggle" routerLinkActive="active" (click)="onClassAdd()" ><i _ngcontent-jsa-c2="" class="menu-icon fa fa-home"></i>Content Management</a>
+            <ul class="ct_dropshow ct_inner_dropdown" routerLinkActive="active">
+              <li routerLinkActive="active show"    [routerLinkActiveOptions]={exact:true} class="menu-item-has-children">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="menu-icon fa fa-home" aria-hidden="true"></i>Home Page
+                </a>
+                <ul routerLinkActive="show" class="sub-menu children dropdown-menu">
+                  <li routerLinkActive="drop-active">
+                    <a routerLink="/section1">Section 1</a>
+                  </li>
+                  <li routerLinkActive="drop-active">
+                    <a routerLink="/section2">Section 2</a>
+                  </li>
+                  <li>
+                    <a routerLink="/section3">Section 3</a>
+                  </li>
+                  <li routerLinkActive="drop-active">
+                    <a routerLink="/section4">Section 4</a>
+                  </li>
+                </ul>
+              </li>
+              <li routerLinkActive="active show"    [routerLinkActiveOptions]={exact:true} class="menu-item-has-children">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="menu-icon fa fa-home" aria-hidden="true"></i>How it works
+                </a>
+                <ul routerLinkActive="show" class="sub-menu children dropdown-menu">
+                  <li routerLinkActive="drop-active">
+                    <a routerLink="/system">The System</a>
+                  </li>
+                  <li routerLinkActive="drop-active">
+                    <a routerLink="/theDay">On the Day</a>
+                  </li>
+                  <li routerLinkActive="drop-active">
+                    <a routerLink="/FAQ">FAQ</a>
+                  </li>
+                </ul>
+              </li>
+              <li routerLinkActive="active " class="menu-item-has-children dropdown">
+                <a routerLink="/horses" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="menu-icon fa fa-horse"></i>Horses Page
+                </a>
+              </li>
+              <li routerLinkActive="active" class="menu-item-has-children dropdown">
+                <a routerLink="/racesManage" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="menu-icon fa-solid fa-flag-checkered"></i>Races Page
+                </a>
+              </li>
+              <li routerLinkActive="active" class="menu-item-has-children dropdown">
+                <a routerLink="/horseRacingTips" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="menu-icon fa-solid fa-flag-checkered"></i>Dashboard horse racing tips
+                </a>
+              </li>
+              <li routerLinkActive="active" class="menu-item-has-children dropdown">
+                <a routerLink="/tips_manage" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="menu-icon fa-solid fa-t"></i>Tips Page
+                </a>
+              </li>
+              <li routerLinkActive="active" class="menu-item-has-children dropdown">
+                <a routerLink="/venue_manage" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="menu-icon fa-solid fa-location-dot"></i>Venue Page
+                </a>
+              </li>
+      
+              <li routerLinkActive="active" class="menu-item-has-children dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="menu-icon  fa-solid fa-address-book"></i>Contact Us Page
+                </a>
+                <ul class="sub-menu children dropdown-menu">
+                  <li>
+                    <a routerLink="/contact_us">Contact us</a>
+                  </li>
+                  <li>
+                    <a routerLink="/contacts">User Contacts</a>
+                  </li>
+      
+                </ul>
+              </li>
+              <li routerLinkActive="active" class="menu-item-has-children dropdown">
+                <a routerLink="/terms_Conditions" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="menu-icon fa-solid fa-gear"></i>Terms & Conditions
+                </a>
+              </li>
+              <li routerLinkActive="active" class="menu-item-has-children dropdown">
+                <a routerLink="/misc" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="menu-icon fa-solid fa-gear"></i>Miscellaneous
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+       </div>
+
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </nav>
+</aside>
+<!-- /#left-panel -->

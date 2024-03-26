@@ -1,0 +1,112 @@
+<app-sidebar></app-sidebar>
+
+<div id="right-panel" class="right-panel">
+    <!-- Header-->
+   <app-header></app-header>
+    <!-- /#header -->
+    <!-- Content -->
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+          <div class="ct_section_width">
+            <div class="d-flex align-items-center gap-3 justify-content-between mb-3">
+              <h4 class="ct_h4 mb-0">Home Management - Clubs Section</h4>
+              <button  class="ct_short_btn ct_big_btn mt-0 mx-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+
+                Add Brands
+              </button>
+            </div>
+            <div>
+              <div
+                class="table-responsive ct_races_table ct_vanue_table p-0 ct_bg_none ct_transaction_table_div ct_table_200">
+                <table class="table">
+                  <thead>
+                    <!-- <tr>
+                      <th class="ct_light_blue_bg_sep "></th>
+                      <th colspan="2" class="ct_light_blue_bg_sep "><strong>ROSEHILL</strong></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+    
+                    </tr> -->
+                    <tr class="ct_sub_head_tble ct_sub_head_sky_blue">
+                      <th class="ct_dark_black_sep">S.no</th>
+                      <th class="ct_dark_black_sep">Image</th>
+                      <th class="ct_dark_black_sep"
+                        style="border-left: 0px solid #dee2e6;border-right: 1px solid #dee2e6; border-radius: 0px 10px 10px 0px">
+                        Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let items of homeData; index as i">
+                      <td class=" ">{{i +1}}</td>
+                      <td class=" "><img class="w-25" src="{{imageURl}}/{{items.image}}" alt=""></td>
+                      <td>
+                        <div class="d-flex align-items-center gap-2 ">
+                          <a ><button  class="ct_short_btn ct_big_btn mt-0 mx-0" (click)="deleteData(items.id)"><i class="fa-solid fa-trash me-1"></i></button></a>
+                        </div>
+                      </td>
+                      <!-- <td class="ct_dark_black_sep text-white">0.00%</td>/ -->
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- <button class="ct_short_btn mx-auto">
+                        Save 
+                      </button> -->
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <!-- view explanation modal S -->
+
+
+
+    <footer class="ct_dash_footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">Copyright &copy; 2023 TipTwo Admin</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+
+  <!-- Modal -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+      
+        <button type="button" class="ct_tble_close" data-bs-dismiss="modal" aria-label="Close"><i #closeModal class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form action="" class="ct_edit_tble_form">
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="Name">Image</label>
+          <input type="file" (change)="PreviewImage()" id="exampleInputFile"  placeholder="Enter Venue Name" class="form-control" accept="image/png, image/svg+xml, image/gif, image/jpeg"
+              >
+              <img class="w-50" src="" alt=""
+              id="uploadPreview">
+
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="onAdd()">Add</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>

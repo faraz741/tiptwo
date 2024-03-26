@@ -1,0 +1,107 @@
+<app-sidebar></app-sidebar>
+
+<div id="right-panel" class="right-panel">
+    <!-- Header-->
+    <app-header></app-header>
+    <!-- /#header -->
+    <!-- Content -->
+    <div class="content">
+        <!-- Animated -->
+        <div class="animated fadeIn">
+            <div class="ct_section_width">
+
+
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="mb-3 d-flex justify-content-between align-items-center flex-wrap">
+                            <h4 class="ct_h4 mb-0">Venue City Management</h4>
+                        </div>
+                        <div class="col-md-5">
+                            <form [formGroup]="cityAdd" (ngSubmit)="onCityAdd(cityAdd)">
+                                <div class="form-group d-flex align-items-center gap-3 w-100">
+                                    <Label class="ct_word_nowrape w-25">City :</Label>
+                                    <input type="text" class="form-control" formControlName="city">
+                                    <button type="submit" class="ct_short_btn  mt-0">Add</button>
+                                </div>
+                       
+                            </form>
+                        </div>
+                        <div class="col-md-5">
+                            <form [formGroup]="venueAdd" (ngSubmit)="onVenueAdd(venueAdd)">
+                                <div class="form-group d-flex align-items-center gap-3">
+                                    <Label class="ct_word_nowrape w-25">Venue :</Label>
+                                    <input type="text" class="form-control" formControlName="venue">
+                                    <button type="submit" class="ct_short_btn mt-0">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                      <div class="row">
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="table-responsive ct_races_table ct_vanue_table p-0 ct_bg_none ct_transaction_table_div ct_table_200">
+                                        <table class="table ct_sky_bg1">
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
+                                                    <th>City</th>
+                                                    <th>Action</th>
+                                                </tr>
+            
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let items of cityData; index as i">
+                                    <td>{{i +1}}</td>
+                                    <td>{{items.city}}</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2 ">
+                                            <a  class="ct_edit_btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash"></i></a>
+                                          </div>
+                                      </td>
+                                  </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="table-responsive ct_races_table ct_vanue_table p-0 ct_bg_none ct_transaction_table_div ct_table_200">
+                                        <table class="table ct_sky_bg1">
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
+                                                    <th>Venue</th>
+                                                    <th>Action</th>
+                                                </tr>
+            
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let items of tipsData; index as i">
+                                    <td>{{i +1}}</td>
+                                    <td>{{items.venue}}</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2 ">
+                                            <a  class="ct_edit_btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash"></i></a>
+                                          </div>
+                                      </td>
+                                  </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+        
+                               </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

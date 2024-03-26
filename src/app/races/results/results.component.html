@@ -1,0 +1,96 @@
+<app-sidebar></app-sidebar>
+
+<!-- Right Panel -->
+<div id="right-panel" class="right-panel">
+    <!-- Header-->
+    <app-header></app-header>
+    <!-- /#header -->
+    <!-- Content -->
+    <div class="content">
+        <div class="row justify-content-center align-items-center pt-5">
+            <div class="col-md-8">
+                <div class="ct_set_bank_bg_form">
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <div formArrayName="tips">
+                            <h4>Result</h4>
+                            <div class="details">
+
+                                <div class="ct_transaction_item_1 ct_black_bg">
+                                    <p>Race NO.</p>
+                                    <h4>{{raceData[0]?.race_number}}</h4>
+                                </div>
+                                <div class="ct_transaction_item_1 ct_black_bg">
+                                    <p>Bet No.</p>
+                                    <h4>{{raceData[0]?.bet_number}}</h4>
+                                </div>
+                            </div>
+                            <div
+                                class="table-responsive ct_races_table ct_vanue_table p-0 ct_bg_none ct_transaction_table_div ct_table_200">
+                                <table class="table  ct_sky_bg1">
+                                    <thead>
+                                        <tr>
+                                            <th>Our Selections</th>
+                                            <th>No.</th>
+                                            <th>Horse Name</th>
+                                            <th>Result</th>
+
+                                            <!-- <th>R&R</th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <div></div>
+
+                                        <tr [formGroupName]="0">
+                                            <td>Selection 1</td>
+                                            <td>1</td>
+                                            <td hidden><input type="text" formControlName="id">{{raceData[0]?.id}}</td>
+                                            <td>{{raceData[0]?.horse_name}}</td>
+                                            <td> <select formControlName="result" [(ngModel)]="result_1" class="form-control ct_light_select_sky"
+                                                >
+                                                    <option value="">Select</option>
+                                                    <option value="Win">Win</option>
+                                                    <option value="Loss">Loss</option>
+                                                </select></td>
+
+                                        </tr>
+
+                                        <tr [formGroupName]="1">
+                                            <td>Selection 2</td>
+                                            <td>2</td>
+                                            <td  hidden><input type="text" formControlName="id"> {{raceData[1]?.id}}</td>
+                                            <td>{{raceData[1]?.horse_name}}</td>
+                                            <td> <select formControlName="result" [(ngModel)]="result_2" class="form-control ct_light_select_sky"
+                                                  >
+                                                    <option value="">Select</option>
+                                                    <option value="Win">Win</option>
+                                                    <option value="Loss">Loss</option>
+                                                </select></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div *ngIf="submitBtn" class="ct_two_btn_btm">
+                                <button type="submit" class="ct_short_btn my-0  px-4 py-2 text-center"
+                                    style="width: 180px;"> Save</button>
+                                <button type="button" class="ct_short_btn my-0  border_red_btn"
+                                    routerLink="/todays_race">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <footer class="ct_dash_footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">Copyright &copy; 2023 TipTwo Admin</div>
+            </div>
+        </div>
+    </footer>
+</div>

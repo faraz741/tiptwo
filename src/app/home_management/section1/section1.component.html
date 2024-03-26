@@ -1,0 +1,81 @@
+
+<app-sidebar></app-sidebar>
+
+<!-- Right Panel -->
+<div id="right-panel" class="right-panel">
+    <!-- Header-->
+    <app-header></app-header>
+    <!-- /#header -->
+    <!-- Content -->
+    <div class="content">
+        <div class="row justify-content-center align-items-center pt-5">
+            <div class="col-md-8">
+                <div class="ct_set_bank_bg_form">
+                    <form [formGroup]="section1Form" (ngSubmit)="onUpdate(section1Form)" enctype="multipart/form-data">
+                        <h4>Home Management-</h4>
+                        <h4>Section 1</h4>
+                        
+                         
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Name">Backgorund Image</label>
+                                    <input type="file" (change)="PreviewImage()"  placeholder="Enter Venue Name" id="exampleInputFile"  class="form-control"   accept="image/png, image/svg+xml, image/gif, image/jpeg">
+                                    <img class="w-50" src="{{imageURl}}/{{homeData[0]?.image}}" alt="" id="uploadPreview">
+                                    <!-- <span class="text-danger"
+                                    *ngIf="createRace.get('race_venue')?.invalid && createRace.get('race_venue')?.touched">
+                                    <div *ngIf="createRace.get('race_venue')?.errors?.['required']">
+                                      Please enter race venue
+                                    </div>
+                                  </span> -->
+                                </div>
+                              </div>
+                              
+                                <div class="form-group">
+                                    <label for="Name">Title</label>
+                                    <input type="text" placeholder="Enter title"   class="form-control" formControlName="title">
+                                    <!-- <span class="text-danger"
+                                    *ngIf="createRace.get('city')?.invalid && createRace.get('city')?.touched">
+                                    <div *ngIf="createRace.get('city')?.errors?.['required']">
+                                      Please enter race city
+                                    </div>
+                                  </span> -->
+                                </div>
+                              
+                              
+                                <div class="form-group">
+                                    <label for="Name">Join Link</label>
+                                    <input type="text" placeholder="Enter join link"  class="form-control" formControlName="join_link">
+                                    <!-- <span class="text-danger"
+                                    *ngIf="createRace.get('race_number')?.invalid && createRace.get('race_number')?.touched">
+                                    <div *ngIf="createRace.get('race_number')?.errors?.['required']">
+                                      Please enter race number
+                                    </div>
+                                  </span> -->
+                                </div>
+                              
+                             
+                          </div>
+                          <div class="ct_two_btn_btm">
+                            <button type="submit" class="ct_short_btn my-0  px-4 py-2 text-center" style="width: 180px;"> Save</button>
+                        <button type="button" class="ct_short_btn my-0  border_red_btn" routerLink="/todays_race">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+               
+            </div>
+
+        </div>
+    
+    
+    </div>
+
+
+    <footer class="ct_dash_footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">Copyright &copy; 2023 TipTwo Admin</div>
+            </div>
+        </div>
+    </footer>
+</div>

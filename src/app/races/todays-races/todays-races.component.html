@@ -1,0 +1,100 @@
+<app-sidebar></app-sidebar>
+
+<div id="right-panel" class="right-panel">
+    <!-- Header-->
+   <app-header></app-header>
+    <!-- /#header -->
+    <!-- Content -->
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+          <div class="ct_section_width">
+            <div class="d-flex align-items-center gap-3 justify-content-between mb-3">
+              <h4 class="ct_h4 mb-0">Races</h4>
+              <div class="d-flex gap-3  ">
+                <a routerLink="/create_races" class="ct_short_btn ct_big_btn mt-0 mx-0">
+                  Create Races
+                </a>
+                <a routerLink="/venueCity" class="ct_short_btn ct_big_btn mt-0 mx-0">
+                  Add Venue & City
+                </a>
+
+              </div>
+            </div>
+            <div>
+              <div
+                class="table-responsive ct_races_table ct_vanue_table p-0 ct_bg_none ct_transaction_table_div ct_table_200">
+                <table class="table">
+                  <thead>
+                    <!-- <tr>
+                      <th class="ct_light_blue_bg_sep "></th>
+                      <th colspan="2" class="ct_light_blue_bg_sep "><strong>ROSEHILL</strong></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+                      <th class="ct_light_blue_bg_sep color-white"></th>
+    
+                    </tr> -->
+                    <tr class="ct_sub_head_tble ct_sub_head_sky_blue">
+                      <th class="ct_dark_black_sep ">S.no</th>
+                      <th class="ct_dark_black_sep ">Race Date</th>
+                      <th class="ct_dark_black_sep ">Venue</th>
+                      <th class="ct_dark_black_sep ">City</th>
+                      <th class="ct_dark_black_sep">BET No.</th>
+                      <th class="ct_dark_black_sep">TIME</th>
+                      <th class="ct_dark_black_sep">Race Number</th>
+                    
+                      <th class="ct_dark_black_sep">POINTS</th>
+                     
+                      <th class="ct_dark_black_sep"
+                        style="border-left: 0px solid #dee2e6;border-right: 1px solid #dee2e6; border-radius: 0px 10px 10px 0px">
+                        Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let race of raceData;index as i">
+                      <td class=" ">{{i +1}}</td>
+                      <td class=" ">{{race.race_date}}</td>
+                      <td class=" ">{{race.race_venue}}</td>
+                      <td class=" ">{{race.city}}</td>
+                      <td class=" ">{{race.bet_number}}</td>
+                      <td class=" ">{{race.race_time}}</td>
+                      <td class="">{{race.race_number}}</td>
+                  
+                      <td class=" ">{{race.points}}</td>
+                      <td>
+                        <div class="d-flex align-items-center gap-2 ">
+                          <a [routerLink]="['/addTips',race.id ]" class="ct_short_btn ct_big_btn mt-0 mx-0"><i class="fa-solid fa-plus me-1"></i> Tips</a>
+                          <a [routerLink]="['/result',race.id ]"><button [ngClass]="race.result_status == '1' ? 'red' : 'green'" class="ct_short_btn ct_big_btn mt-0 mx-0">Give Results</button></a>
+                        </div>
+                      </td>
+                      <!-- <td class="ct_dark_black_sep text-white">0.00%</td>/ -->
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- <button class="ct_short_btn mx-auto">
+                        Save 
+                      </button> -->
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+    <footer class="ct_dash_footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">Copyright &copy; 2023 TipTwo Admin</div>
+        </div>
+      </div>
+    </footer>
+  </div>

@@ -1,0 +1,127 @@
+<app-sidebar></app-sidebar>
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+       <app-header></app-header>
+        <!-- /#header -->
+        <!-- Content -->
+          <div class="content">
+              <div class="row justify-content-center align-items-center pt-5">
+                  <div class="col-md-8">
+                      <div class="ct_set_bank_bg_form">
+                          <form [formGroup]="createRace" (ngSubmit)="onAdd(createRace)">
+                              <h4>Create Races</h4>
+                              
+                                
+                              <div class="row mt-4">
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="Name">Venue</label>
+                                          <!-- <input type="text" placeholder="Enter Venue Name"  class="form-control" formControlName="race_venue" autocomplete > -->
+                                          <select class="form-control" formControlName="race_venue">
+                                            <option  [ngValue]="null" disabled>Select Venue</option>
+                                            <option *ngFor="let items of tipsData" [value]="items.venue">{{items.venue}}</option>
+                                          </select>
+                                          <span class="text-danger"
+                                          *ngIf="createRace.get('race_venue')?.invalid && createRace.get('race_venue')?.touched">
+                                          <div *ngIf="createRace.get('race_venue')?.errors?.['required']">
+                                            Please select venue
+                                          </div>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="Name">City</label>
+                                          <!-- <input type="text" placeholder="Enter City"  class="form-control" formControlName="city"> -->
+                                          <select class="form-control" formControlName="city">
+                                            <option  [ngValue]="null" disabled>Select City</option>
+                                            <option *ngFor="let items of cityData" [value]="items.city">{{items.city}}</option>
+                                          </select>
+                                          <span class="text-danger"
+                                          *ngIf="createRace.get('city')?.invalid && createRace.get('city')?.touched">
+                                          <div *ngIf="createRace.get('city')?.errors?.['required']">
+                                            Please select city
+                                          </div>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="Name">Bet No.</label>
+                                          <input type="number" placeholder="Enter Bet Number" class="form-control" formControlName="bet_number">
+                                          <span class="text-danger"
+                                          *ngIf="createRace.get('bet_number')?.invalid && createRace.get('bet_number')?.touched">
+                                          <div *ngIf="createRace.get('bet_number')?.errors?.['required']">
+                                            Please enter race number only
+                                          </div>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="Name">Race Number</label>
+                                          <input type="text" placeholder="Enter race number"  class="form-control" formControlName="race_number">
+                                          <span class="text-danger"
+                                          *ngIf="createRace.get('race_number')?.invalid && createRace.get('race_number')?.touched">
+                                          <div *ngIf="createRace.get('race_number')?.errors?.['required']">
+                                            Please enter race number
+                                          </div>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="Name">Race Date</label>
+                                          <input type="date" placeholder="Enter race date"  class="form-control" formControlName="race_date" >
+                                          <span class="text-danger"
+                                          *ngIf="createRace.get('race_date')?.invalid && createRace.get('race_date')?.touched">
+                                          <div *ngIf="createRace.get('race_date')?.errors?.['required']">
+                                            Please enter race date
+                                          </div>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="Name">Race Time</label>
+                                          <input type="time" step="1" placeholder="Enter Time" class="form-control" formControlName="race_time">
+                                          <span class="text-danger"
+                                          *ngIf="createRace.get('race_time')?.invalid && createRace.get('race_time')?.touched">
+                                          <div *ngIf="createRace.get('race_time')?.errors?.['required']">
+                                            Please enter race time
+                                          </div>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="Name">Points</label>
+                                          <input type="number" placeholder="Enter Points" class="form-control" formControlName="points">
+                                      </div>
+                                    </div>
+                                
+                                  
+                                </div>
+                                <div class="ct_two_btn_btm">
+                                  <button type="submit" class="ct_short_btn my-0  px-4 py-2 text-center" style="width: 180px;"> Save</button>
+                              <button type="button" class="ct_short_btn my-0  border_red_btn" routerLink="/todays_race">Cancel</button>
+                              </div>
+                          </form>
+                      </div>
+                     
+                  </div>
+  
+              </div>
+          
+          
+          </div>
+          <footer class="ct_dash_footer">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6">Copyright &copy; 2023 TipTwo Admin</div>
+              </div>
+            </div>
+        </footer>
+          </div>
